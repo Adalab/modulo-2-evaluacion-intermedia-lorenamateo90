@@ -10,7 +10,7 @@ function getRandomNumber(max) {
 return Math.ceil(Math.random() * max);
  }
  const ramdon = getRandomNumber(100);
-console.log (`mi número aleatorio es ${ramdom})`;
+console.log (`mi número aleatorio es ${ramdom}`);
 
 // 2. Evento botón - número
 function updateClick() {
