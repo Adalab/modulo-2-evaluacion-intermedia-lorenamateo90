@@ -1,46 +1,48 @@
 'use strict'
 // variables declaradas
-const text = document.querySelector(".text");
-const button = document.querySelector(".button");
-const paragraph1 = document.querySelector(".paragraph1");
-const paragraph2 = document.querySelector(".paragraph2");
+const number = document.querySelector(".js-number");
+const button = document.querySelector(".js-button");
+const paragraph1 = document.querySelector(".js-paragraph1");
+const paragraph2 = document.querySelector(".js-paragraph2");
 
 // 1. Generar numero ramdom
 function getRandomNumber(max) {
 return Math.ceil(Math.random() * max);
  }
- const ramdon = getRandomNumber(100);
-console.log (`mi número aleatorio es ${ramdom}`);
+ const random = getRandomNumber(100);
+console.log (random);
 
-// 2. Evento botón - número
-function updateClick() {
-const textValue
-}
-btn.addEventListener("click", updateclick);
+//  2. Cambiar mensaje paragraph1
 
-
-
-//  3. Cambiar mensaje paragraph1
- const showMessage = function () {
-  const textValue = parseInt(text.value);
-  if () {
-
-  } else if {
-
-  }else if {
-
-  }else if{
-
-  }else{
-
+ function showMessage (){
+  let numberValue = parseInt(number.value);
+  if (numberValue <0  || numberValue >= 100 ) {
+      // console.log("debe ser un numero de 0 a 100");
+      paragraph1.innerHTML = "debe ser un numero de 0 a 100";
   }
-paragraph1.addEventListener("change", showMessage);
+  else if (numberValue < random ){
+      // console.log("bajo")
+          paragraph1.innerHTML = "bajo";
+          
+      }
+  else if (numberValue > random){
+      // console.log("alto")
+          paragraph1.innerHTML = "alto";
+          
+      }
+  else if (numberValue === random){
+      // console.log("Ganadora")
+          paragraph1.innerHTML = "ganadora";
+         
+      }
+   updateClick();
+}
 
 
-
-
-
-
-// 1.Necesito numero ramdon 
-// 2.if/else con value para los mensajes que tienen que aparecer en los paragraph con el ${ramdom}
-// 3.Eventos en todo lo que interactua en el ejercicio/constantes.
+// 3. Evento botón - número
+let click = 0;
+function updateClick() {
+  click++;
+  paragraph2.innerHTML = click;
+}
+button.addEventListener("click", showMessage);
